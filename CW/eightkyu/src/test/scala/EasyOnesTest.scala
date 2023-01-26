@@ -25,4 +25,16 @@ class EasyOnesTest extends AnyFlatSpec {
     assertResult(Seq(0))(EasyOnes.digitize2(0L))
     assertResult(Seq(4, 5, 3, 1, 0, 2, 3))(EasyOnes.digitize2(3201354L))
   }
+
+  "abbrevName" should "pass basic tests" in {
+    assertResult("S.H", "\nInput\n n = \"Sam Harris\"")(EasyOnes.abbrevName("Sam Harris"))
+    assertResult("R.G", "\nInput\n n = \"rachel greene\"")(EasyOnes.abbrevName("rachel greene"))
+    assertResult("R.G", "\nInput\n n = \"r geller\"")(EasyOnes.abbrevName("r geller"))
+    assertResult("M.G", "\nInput\n n = \"Monica geller\"")(EasyOnes.abbrevName("Monica geller"))
+    assertResult("J.T", "\nInput\n n = \"Joey t\"")(EasyOnes.abbrevName("Joey t"))
+  }
+
+  "sumFrom1To20" should "pass basic tests" in {
+    assertResult(210)(EasyOnes.sumFrom1To20())
+  }
 }

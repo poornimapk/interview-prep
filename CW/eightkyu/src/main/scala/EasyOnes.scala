@@ -11,4 +11,14 @@ object EasyOnes {
   }
 
   def digitize2(n: Long): Seq[Int] = n.toString.map(_.asDigit).reverse
+
+  def abbrevName(name: String): String = name.split(' ').map(_.toLowerCase.capitalize).map(str => str(0)).mkString(".")
+
+  def sumFrom1To20(): Int = {
+    var res = 0
+    for(i <- 1 to 20)
+      res = res + i
+    res
+  }
+
 }
