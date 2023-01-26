@@ -25,4 +25,40 @@ class EasyOnesTest extends AnyFlatSpec {
     assertResult(Seq(0))(EasyOnes.digitize2(0L))
     assertResult(Seq(4, 5, 3, 1, 0, 2, 3))(EasyOnes.digitize2(3201354L))
   }
+
+  "abbrevName" should "pass basic tests" in {
+    assertResult("S.H", "\nInput\n n = \"Sam Harris\"")(EasyOnes.abbrevName("Sam Harris"))
+    assertResult("R.G", "\nInput\n n = \"rachel greene\"")(EasyOnes.abbrevName("rachel greene"))
+    assertResult("R.G", "\nInput\n n = \"r geller\"")(EasyOnes.abbrevName("r geller"))
+    assertResult("M.G", "\nInput\n n = \"Monica geller\"")(EasyOnes.abbrevName("Monica geller"))
+    assertResult("J.T", "\nInput\n n = \"Joey t\"")(EasyOnes.abbrevName("Joey t"))
+  }
+
+  "sumFrom1To20" should "pass basic tests" in {
+    assertResult(210)(EasyOnes.sumFrom1To20())
+  }
+
+  "areYouPlayingBanjo" should "pass basic tests" in {
+    assertResult("Rooney plays banjo")(EasyOnes.areYouPlayingBanjo("Rooney"))
+    assertResult("ramira plays banjo")(EasyOnes.areYouPlayingBanjo("ramira"))
+    assertResult("Chandler does not play banjo")(EasyOnes.areYouPlayingBanjo("Chandler"))
+  }
+
+  "countPositivesSumNegatives" should "pass basic tests" in {
+    assertResult((10, -65))(EasyOnes.countPositivesSumNegatives(Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15)))
+    assertResult((8, -50))(EasyOnes.countPositivesSumNegatives(Array(0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14)))
+    assertResult((1, 0))(EasyOnes.countPositivesSumNegatives(Array(1)))
+    assertResult((0, -1))(EasyOnes.countPositivesSumNegatives(Array(-1)))
+    assertResult((0, 0))(EasyOnes.countPositivesSumNegatives(Array(0, 0, 0, 0, 0, 0, 0, 0, 0)))
+    assertResult((0, 0))(EasyOnes.countPositivesSumNegatives(Array[Int]()))
+  }
+
+  "barTriang" should "pass basic tests" in {
+    assertResult((8.6667, 6.6667))(EasyOnes.barTriang((4, 6), (12, 4), (10, 10)))
+  }
+
+  "roundAt" should "pass basic tests" in {
+    assertResult(8.6667)(EasyOnes.roundAt(8.6666666666, 4))
+    assertResult(6.6667)(EasyOnes.roundAt(6.6666666666, 4))
+  }
 }
