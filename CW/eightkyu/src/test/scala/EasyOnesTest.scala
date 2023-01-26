@@ -37,4 +37,19 @@ class EasyOnesTest extends AnyFlatSpec {
   "sumFrom1To20" should "pass basic tests" in {
     assertResult(210)(EasyOnes.sumFrom1To20())
   }
+
+  "areYouPlayingBanjo" should "pass basic tests" in {
+    assertResult("Rooney plays banjo")(EasyOnes.areYouPlayingBanjo("Rooney"))
+    assertResult("ramira plays banjo")(EasyOnes.areYouPlayingBanjo("ramira"))
+    assertResult("Chandler does not play banjo")(EasyOnes.areYouPlayingBanjo("Chandler"))
+  }
+
+  "countPositivesSumNegatives" should "pass basic tests" in {
+    assertResult((10, -65))(EasyOnes.countPositivesSumNegatives(Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15)))
+    assertResult((8, -50))(EasyOnes.countPositivesSumNegatives(Array(0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14)))
+    assertResult((1, 0))(EasyOnes.countPositivesSumNegatives(Array(1)))
+    assertResult((0, -1))(EasyOnes.countPositivesSumNegatives(Array(-1)))
+    assertResult((0, 0))(EasyOnes.countPositivesSumNegatives(Array(0, 0, 0, 0, 0, 0, 0, 0, 0)))
+    assertResult((0, 0))(EasyOnes.countPositivesSumNegatives(Array[Int]()))
+  }
 }

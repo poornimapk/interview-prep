@@ -21,4 +21,19 @@ object EasyOnes {
     res
   }
 
+  def areYouPlayingBanjo(name: String): String = name match {
+    case r if(name.startsWith("R") || name.startsWith("r")) => s"$name plays banjo"
+    case _ => s"$name does not play banjo"
+  }
+
+  def countPositivesSumNegatives(integers: Array[Int]): (Int, Int) = {
+    var count = 0
+    var sum = 0
+    integers.map(integer => {
+      if(integer.abs == integer && integer != 0) count = count + 1
+      else sum = sum + integer
+    })
+    (count, sum)
+  }
+
 }
