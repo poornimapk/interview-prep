@@ -36,4 +36,15 @@ object EasyOnes {
     (count, sum)
   }
 
+  def barTriang(pointA: (Int, Int), pointB: (Int, Int), pointC: (Int, Int)): (Double, Double) = {
+    (
+      roundAt(((pointA._1.toDouble + pointB._1.toDouble + pointC._1.toDouble) / 3), 4),
+      roundAt(((pointA._2.toDouble + pointB._2.toDouble + pointC._2.toDouble) / 3), 4)
+    )
+  }
+
+  def roundAt(n: Double, at: Int): Double = {
+    val tmp = math pow(10, at)
+    (math round n * tmp) / tmp
+  }
 }

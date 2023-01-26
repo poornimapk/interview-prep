@@ -52,4 +52,13 @@ class EasyOnesTest extends AnyFlatSpec {
     assertResult((0, 0))(EasyOnes.countPositivesSumNegatives(Array(0, 0, 0, 0, 0, 0, 0, 0, 0)))
     assertResult((0, 0))(EasyOnes.countPositivesSumNegatives(Array[Int]()))
   }
+
+  "barTriang" should "pass basic tests" in {
+    assertResult((8.6667, 6.6667))(EasyOnes.barTriang((4, 6), (12, 4), (10, 10)))
+  }
+
+  "roundAt" should "pass basic tests" in {
+    assertResult(8.6667)(EasyOnes.roundAt(8.6666666666, 4))
+    assertResult(6.6667)(EasyOnes.roundAt(6.6666666666, 4))
+  }
 }
