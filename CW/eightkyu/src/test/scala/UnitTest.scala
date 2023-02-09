@@ -31,4 +31,18 @@ class UnitTest extends AnyFunSuite {
     assert(RemoveStringSpaces.noSpace("jfBm  gk lf8hg  88lbe8 ") === "jfBmgklf8hg88lbe8")
     assert(RemoveStringSpaces.noSpace("8j aam") === "8jaam")
   }
+
+  test("MostRepeatedChar") {
+    //assert(MostRepeatedCharacter.mostRepeatedChar("poornima") === 'o')
+    assert(MostRepeatedCharacter.mostRepeatedChar("pppkkksssaaaa") === 'a')
+    assert(MostRepeatedCharacter.mostRepeatedChar("pppkkksss222222aaaa") === '2')
+  }
+  test("MostRepeatedCharHashMap") {
+    assert(MostRepeatedCharacter.mostRepeatedCharUsingHashMap("poornima") === 'o')
+    assert(MostRepeatedCharacter.mostRepeatedChar("pppkkksssaaaa") === 'a')
+    assert(MostRepeatedCharacter.mostRepeatedChar("  pppkkksss     aaaa") === ' ')
+    assert(MostRepeatedCharacter.mostRepeatedCharUsingHashMap("pppkkksss222222aaaa") === 'a')
+    assert(MostRepeatedCharacter.mostRepeatedCharUsingHashMap("pppkkksss222#1@@@@@@@@@222aaaaDDDDDDDDDD") === 'D')
+    assert(MostRepeatedCharacter.mostRepeatedCharUsingHashMap("pppkkksss222#1@@@@@@@@@222aaaaDDDDDDDDDD") === 'D')
+  }
 }
