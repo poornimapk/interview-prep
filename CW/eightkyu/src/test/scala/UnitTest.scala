@@ -52,4 +52,10 @@ class UnitTest extends AnyFunSuite {
     assert(PlusOne.plusOneFn(Array(4,3,9,9)) === Array(4,4,0,0))
     assert(PlusOne.plusOneFn(Array(4,9,9,9)) === Array(5,0,0,0))
   }
+
+  test("LicenseKeyFormatting") {
+    assert(LicenseKeyFormatting.formatLicenseKey("5F3Z-2e-9-w", 4) === "5F3Z-2E9W")
+    assert(LicenseKeyFormatting.formatLicenseKey("2-5g-3-J", 2) === "2-5G-3J")
+    assert(LicenseKeyFormatting.formatLicenseKey("22-5grQ-3csw-JRw", 3) === "2-25G-RQ3-CSW-JRW")
+  }
 }
