@@ -45,4 +45,11 @@ class UnitTest extends AnyFunSuite {
     assert(MostRepeatedCharacter.mostRepeatedCharUsingHashMap("pppkkksss222#1@@@@@@@@@222aaaaDDDDDDDDDD") === 'D')
     assert(MostRepeatedCharacter.mostRepeatedCharUsingHashMap("pppkkksss222#1@@@@@@@@@222aaaaDDDDDDDDDD") === 'D')
   }
+
+  test("PlusOne") {
+    assert(PlusOne.plusOneFn(Array(4,3,2,1)) === Array(4,3,2,2))
+    assert(PlusOne.plusOneFn(Array(4,3,2,9)) === Array(4,3,3,0))
+    assert(PlusOne.plusOneFn(Array(4,3,9,9)) === Array(4,4,0,0))
+    assert(PlusOne.plusOneFn(Array(4,9,9,9)) === Array(5,0,0,0))
+  }
 }
