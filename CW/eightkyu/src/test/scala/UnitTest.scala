@@ -58,4 +58,11 @@ class UnitTest extends AnyFunSuite {
     assert(LicenseKeyFormatting.formatLicenseKey("2-5g-3-J", 2) === "2-5G-3J")
     assert(LicenseKeyFormatting.formatLicenseKey("22-5grQ-3csw-JRw", 3) === "2-25G-RQ3-CSW-JRW")
   }
+
+  test("SubarrayWithLeastAverage") {
+    assert(SubarrayWithLeastAverage.findSubArrayWithLeastAverage(Array(12, 34, 20, 30, 24, 45), 3) === "Sub-Array of [0, 2] has a minimum average.")
+    assert(SubarrayWithLeastAverage.findSubArrayWithLeastAverage(Array(42, 20, 15, 26, 10, 33), 3) === "Sub-Array of [2, 4] has a minimum average.")
+    assert(SubarrayWithLeastAverage.findSubArrayWithLeastAverage(Array(40, 20, 10, 30, 10, 50), 2) === "Sub-Array of [1, 2] has a minimum average.")
+    assert(SubarrayWithLeastAverage.findSubArrayWithLeastAverage(Array(3, 7, 90, 20, 10, 50, 40), 3) === "Sub-Array of [3, 5] has a minimum average.")
+  }
 }
