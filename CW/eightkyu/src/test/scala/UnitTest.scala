@@ -77,4 +77,22 @@ class UnitTest extends AnyFunSuite {
     assert(ContainsDuplicate.containsDuplicateFnOptimized(Array(1, 2, 3, 4)) === false)
     assert(ContainsDuplicate.containsDuplicateFnOptimized(Array(1, 1, 1, 3, 3, 4, 3, 2, 4, 2)) === true)
   }
+
+  test("ValidAnagram") {
+    assert(ValidAnagram.isAnagram("anagram", "nagaram") === true)
+    assert(ValidAnagram.isAnagram("rat", "car") === false)
+    assert(ValidAnagram.isAnagram("brush", "shrub") === true)
+    assert(ValidAnagram.isAnagram("angered", "enraged") === true)
+    assert(ValidAnagram.isAnagram("hello", "world") === false)
+    assert(ValidAnagram.isAnagram("hellos", "world") === false)
+  }
+
+  test("ValidAnagram2") {
+    assert(ValidAnagram.isAnagram2("anagram", "nagaram") === true)
+    assert(ValidAnagram.isAnagram2("rat", "car") === false)
+    assert(ValidAnagram.isAnagram2("brush", "shrub") === true)
+    assert(ValidAnagram.isAnagram2("angered", "enraged") === true)
+    assert(ValidAnagram.isAnagram2("hello", "world") === false)
+    assert(ValidAnagram.isAnagram2("hellos", "world") === false)
+  }
 }
