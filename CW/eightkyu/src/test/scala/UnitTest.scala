@@ -65,4 +65,16 @@ class UnitTest extends AnyFunSuite {
     assert(SubarrayWithLeastAverage.findSubArrayWithLeastAverage(Array(40, 20, 10, 30, 10, 50), 2) === "Sub-Array of [1, 2] has a minimum average.")
     assert(SubarrayWithLeastAverage.findSubArrayWithLeastAverage(Array(3, 7, 90, 20, 10, 50, 40), 3) === "Sub-Array of [3, 5] has a minimum average.")
   }
+
+  test("ContainsDuplicate") {
+    assert(ContainsDuplicate.containsDuplicateFn(Array(1,2,3,1)) === true)
+    assert(ContainsDuplicate.containsDuplicateFn(Array(1,2,3,4)) === false)
+    assert(ContainsDuplicate.containsDuplicateFn(Array(1,1,1,3,3,4,3,2,4,2)) === true)
+  }
+
+  test("ContainsDuplicateOptimized") {
+    assert(ContainsDuplicate.containsDuplicateFnOptimized(Array(1, 2, 3, 1)) === true)
+    assert(ContainsDuplicate.containsDuplicateFnOptimized(Array(1, 2, 3, 4)) === false)
+    assert(ContainsDuplicate.containsDuplicateFnOptimized(Array(1, 1, 1, 3, 3, 4, 3, 2, 4, 2)) === true)
+  }
 }
